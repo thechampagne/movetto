@@ -116,12 +116,12 @@ if (args[0] == "--movie") {
 }
 
 
-static def indexExists(String[] list, int index) {
+def indexExists(String[] list, int index) {
     return index >= 0 && index < list.size()
 }
 
 
-static def generateId(file) {
+def generateId(file) {
     def json = new JsonSlurper().parseText(file.text)
     def list = []
     json.each { LazyMap keys ->
@@ -136,7 +136,7 @@ static def generateId(file) {
         1
 }
 
-static def writeJson(file, map) {
+def writeJson(file, map) {
     def json = new JsonSlurper().parseText(file.text)
     def list = []
     json.each {
